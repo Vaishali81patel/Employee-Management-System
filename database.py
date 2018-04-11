@@ -129,8 +129,8 @@ class Database(IDataAccess):
             return False
 
 
-# db = Database()
-# new_data_01 = [{"EMPID": "Y413", "GENDER": "M", "AGE": 41, "SALES": 200,
-# "BMI": "Obesity", "SALARY": 450, "BIRTHDAY": "01-09-1977"}]
-# # print(db.save(new_data_01))
-# print(db.read())
+   # db = Database()
+   # new_data_01 = [{"EMPID": "Y413", "GENDER": "M", "AGE": 41, "SALES": 200,
+   # "BMI": "Obesity", "SALARY": 450, "BIRTHDAY": "01-09-1977"}]
+   # print(db.save(new_data_01))
+   # print(db.read())

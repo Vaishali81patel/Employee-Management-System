@@ -134,6 +134,21 @@ class EmployeeData:
                 bmi[row[Data.BMI.name]] += 1
         return bmi
 
+    def get_salary(self):
+        salary = {}
+
+        all_data = self.get_all_data()
+        if len(all_data) == 0:
+            return salary
+
+        for row in all_data:
+            if row[Data.SALARY.name] not in salary.keys():
+                salary[row[Data.SALARY.name]] = 1
+            else:
+                salary[row[Data.SALARY.name]] += 1
+        return salary
+
+
     def __del__(self):
         self.data = []
         self._source = None
