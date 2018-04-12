@@ -47,10 +47,6 @@ class MainTests(TestCase):
     def test_09(self):
         self.assertTrue(callable(getattr(FileHandler, "save")))
 
-    def test_10(self):
-        vld = DataValidator()
-        self.assertTrue(len(vld.validators) == 7)
-
     def test_11(self):
         csv = FileHandler("employeeinfo.csv")
         self.assertRaises(AttributeError, csv.save, "This is a data list")

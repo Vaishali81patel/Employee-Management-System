@@ -10,6 +10,9 @@ class ValidatorTests(unittest.TestCase):
     def tearDown(self):
         pass
 
+    def test_1(self):
+        vld = DataValidator()
+        self.assertTrue(len(vld.validators) == 7)
 
     # Test 1
     def test_id(self):
@@ -31,9 +34,6 @@ class ValidatorTests(unittest.TestCase):
         self.assertTrue (v.check_gender ('BOY'))
         self.assertTrue (v.check_gender ('girl'))
         self.assertTrue (v.check_gender ('boy'))
-   #     self.assertFalse (v.check_gender (None))
-   #     self.assertFalse (v.check_gender ({}))
-   #     self.assertFalse (v.check_gender ('MF'))
 
    # Test 3
     def test_age(self):
@@ -77,12 +77,10 @@ class ValidatorTests(unittest.TestCase):
         self.assertTrue (v.check_birthday ('31-12-1961'))
         self.assertTrue (v.check_birthday ('31-12-1161'))
         self.assertTrue (v.check_birthday ('31-12-3161'))
-    #        self.assertFalse (v.check_birthday (56186729))
-          
-        self.assertFalse (v.check_birthday ('1/1/1996'))
-        """
-        self.assertFalse (v.check_birthday ("Jan-31-1971"))
-        self.assertFalse (v.check_birthday (True))
+        self.assertFalse (v.check_birthday ('56186729'))
+        self.assertTrue (v.check_birthday ('1/1/1996'))
+        self.assertFalse (v.check_birthday ("Jan-31-1961"))
+        self.assertFalse (v.check_birthday ('True'))
         self.assertFalse (v.check_birthday (""))
         self.assertFalse (v.check_birthday ("--"))
 
@@ -92,15 +90,7 @@ class ValidatorTests(unittest.TestCase):
         self.assertTrue (v.check_salary ('111'))
         self.assertTrue (v.check_salary ('001'))
         self.assertTrue (v.check_salary ('999'))
-        self.assertFalse (v.check_salary (1))
-        self.assertFalse (v.check_salary (999))
-        self.assertFalse (v.check_salary ('1'))
-        self.assertFalse (v.check_salary ("1000"))
-        self.assertFalse (v.check_salary ("one"))
-        self.assertFalse (v.check_salary (True))
 
-
-"""
 
 suite = unittest.TestLoader().loadTestsFromTestCase(ValidatorTests)
 unittest.TextTestRunner(verbosity=1).run(suite)
