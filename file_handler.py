@@ -42,6 +42,8 @@ class FileHandler(IDataAccess):
         # chdir(self.__file_path)
         if not self.file_exist():
             with open(self.__path, "w+") as f:
+                # Load Pickle data in to the csv file
+           #     pickle.dump (pickle_employee, self.__file_path)
                 writer = csv.writer(f, lineterminator="\n")
                 writer.writerow(list(d.name for d in Data))
         else:
@@ -54,6 +56,9 @@ class FileHandler(IDataAccess):
         """
         # Try to open the file for read. newline to avoid different newline signs
         with open(self.__path, newline="") as f:
+            # read pickle data from the file
+        #    file = open (self.__file_path, 'rb')
+         #   new_e, mployee = pickle.load (self.__file_path)
             # Try to read data with given fieldnames
             reader = csv.DictReader(f, fieldnames=self._fieldnames)
             # Save data in an array, but ignore the first line
