@@ -194,7 +194,7 @@ class InterpreterController (Cmd):
     def show_pie(self, line):
         # Draw Pies
         try:
-            if len (self._std.get_gender ()) == 0 or len (self._std.get_bmi ()) == 0:
+            if len (self._std.get_gender()) == 0 or len (self._std.get_bmi ()) == 0:
                 raise ValueError ("No data to display.")
             # Draw gender
             if line.upper () == Data.GENDER.name:

@@ -99,6 +99,7 @@ class EmployeeData:
         return self.data + self.new_data
 
     def get_gender(self):
+        gendeer = {}
         """
         Get gender statistics
         :return: <Dictionary> gender
