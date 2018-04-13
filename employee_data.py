@@ -94,6 +94,7 @@ class EmployeeData:
             # Reset temp data and reload data from the data source
             self.new_data = []
             self.load_data()
+            self.save()
 
     def get_all_data(self):
         return self.data + self.new_data

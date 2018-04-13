@@ -45,6 +45,7 @@ class FileHandler(IDataAccess):
                 # Load Pickle data in to the csv file
            #     pickle.dump (pickle_employee, self.__file_path)
                 writer = csv.writer(f, lineterminator="\n")
+                write = db.writer(f, lineterminator="\n")
                 writer.writerow(list(d.name for d in Data))
         else:
             raise OSError("Can't create the file. The file already exists.")
@@ -61,6 +62,7 @@ class FileHandler(IDataAccess):
          #   new_e, mployee = pickle.load (self.__file_path)
             # Try to read data with given fieldnames
             reader = csv.DictReader(f, fieldnames=self._fieldnames)
+            reader = db.DictReader(f, fieldnames=self._fieldnames)
             # Save data in an array, but ignore the first line
             data = list(dict(row) for row in reader)[1:]
 
@@ -92,5 +94,5 @@ class FileHandler(IDataAccess):
                 writer = csv.writer(f, lineterminator="\n")
                 for row in data:
                     writer.writerow(row.values())
-
+        
 
